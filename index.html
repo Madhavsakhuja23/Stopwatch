@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="defaultval()">
+    <h1>StopWatch Clock</h1>
+    <select name="Color" id="clr" onchange="changecolor()">
+        <option name="colr" value="clr">Colors</option>
+        <option name="colr" value="orange">Orange</option>
+        <option name="colr" value="yellow">Yellow</option>
+        <option name="colr" value="red">Red</option>
+    </select>
+    <select name="tym" id="min" onchange="minchange()">
+        <option name="time" value="mins" selected>minutes</option>
+        <option name="time" value="25">25 mins</option>
+        <option name="time" value="30">30 mins</option>
+        <option name="time" value="35">35 mins</option>
+        <option name="time" value="40">40 mins</option>
+    </select>
+    <select name="tym" id="sec" onchange="secchange()">
+        <option name="time" value="secs" selected> seconds</option>
+        <option name="time" value="00"> 00 sec</option>
+        <option name="time" value="10">10 sec</option>
+        <option name="time" value="20">20 sec</option>
+        <option name="time" value="30">30 sec</option>
+        <option name="time" value="40">40 sec</option>
+        <option name="time" value="50">50 sec</option>
+        <option name="time" value="59">59 sec</option>
+    </select>
+    <br><br>
+    <div id="displaywatch">
+        <p id="im"></p>:<p id="is"></p>
+    </div>
+    <br><br>
+    <button id="start" onclick="timmer()">Start</button>
+    <button id="pause" onclick="pause()"> Pause</button>
+    <button id="rst" onclick="reset()"> reset</button>
+    <button id="add" onclick="add()"> &#43; </button>
+    <input type="number" name="num" id="adm">
+    <input type="number" name="num" id="ads">
+    <button id="set" onclick="set()">set</button>
+    <script src="app.js"></script>
+</body>
+</html>
