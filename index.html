@@ -3,46 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>StopWatch Clock</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="defaultval()">
-    <h1>StopWatch Clock</h1>
-    <select name="Color" id="clr" onchange="changecolor()">
-        <option name="colr" value="clr">Colors</option>
-        <option name="colr" value="orange">Orange</option>
-        <option name="colr" value="yellow">Yellow</option>
-        <option name="colr" value="red">Red</option>
-    </select>
-    <select name="tym" id="min" onchange="minchange()">
-        <option name="time" value="mins" selected>minutes</option>
-        <option name="time" value="25">25 mins</option>
-        <option name="time" value="30">30 mins</option>
-        <option name="time" value="35">35 mins</option>
-        <option name="time" value="40">40 mins</option>
-    </select>
-    <select name="tym" id="sec" onchange="secchange()">
-        <option name="time" value="secs" selected> seconds</option>
-        <option name="time" value="00"> 00 sec</option>
-        <option name="time" value="10">10 sec</option>
-        <option name="time" value="20">20 sec</option>
-        <option name="time" value="30">30 sec</option>
-        <option name="time" value="40">40 sec</option>
-        <option name="time" value="50">50 sec</option>
-        <option name="time" value="59">59 sec</option>
-    </select>
-    <br><br>
-    <div id="displaywatch">
-        <p id="im"></p>:<p id="is"></p>
+    <div class="container">
+        <h1>StopWatch Clock</h1>
+        
+        <div class="controls">
+            <div class="select-group">
+                <label for="clr">Theme</label>
+                <select name="Color" id="clr" onchange="changecolor()">
+                    <option name="colr" value="#2F4F4F">Default</option>
+                    <option name="colr" value="#006400">Dark Green</option>
+                    <option name="colr" value="#00008B">Dark Blue</option>
+                    <option name="colr" value="#ADFF2F">Greenyellow</option>
+                    <option name="colr" value="#4B0082">Indigo</option>
+                    <option name="colr" value="#8B0000">Dark Red</option>
+                </select>
+            </div>
+            
+            <div class="select-group">
+                <label for="min">Minutes</label>
+                <select name="tym" id="min" onchange="minchange()">
+                    <option name="time" value="00" selected>00 mins</option>
+                    <option name="time" value="05">05 mins</option>
+                    <option name="time" value="10">10 mins</option>
+                    <option name="time" value="15">15 mins</option>
+                    <option name="time" value="20">20 mins</option>
+                    <option name="time" value="25">25 mins</option>
+                    <option name="time" value="30">30 mins</option>
+                </select>
+            </div>
+            
+            <div class="select-group">
+                <label for="sec">Seconds</label>
+                <select name="tym" id="sec" onchange="secchange()">
+                    <option name="time" value="00" selected>00 sec</option>
+                    <option name="time" value="10">10 sec</option>
+                    <option name="time" value="20">20 sec</option>
+                    <option name="time" value="30">30 sec</option>
+                    <option name="time" value="40">40 sec</option>
+                    <option name="time" value="50">50 sec</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="displaywatch">
+            <span id="im">00</span>:<span id="is">00</span>
+        </div>
+        
+        <div class="buttons">
+            <button id="start" onclick="timmer()">
+                <i class="fas fa-play"></i> Start
+            </button>
+            <button id="pause" onclick="pause()">
+                <i class="fas fa-pause"></i> Pause
+            </button>
+            <button id="rst" onclick="reset()">
+                <i class="fas fa-redo"></i> Reset
+            </button>
+        </div>
+        
+        <div class="custom-time">
+            <button id="add" onclick="add()">
+                <i class="fas fa-plus"></i> Custom Time
+            </button>
+            <div class="custom-inputs">
+                <input type="number" name="num" id="adm" placeholder="Minutes" min="0">
+                <input type="number" name="num" id="ads" placeholder="Seconds" min="0" max="59">
+                <button id="set" onclick="set()">Set</button>
+            </div>
+        </div>
     </div>
-    <br><br>
-    <button id="start" onclick="timmer()">Start</button>
-    <button id="pause" onclick="pause()"> Pause</button>
-    <button id="rst" onclick="reset()"> reset</button>
-    <button id="add" onclick="add()"> &#43; </button>
-    <input type="number" name="num" id="adm">
-    <input type="number" name="num" id="ads">
-    <button id="set" onclick="set()">set</button>
+    
     <script src="app.js"></script>
 </body>
 </html>
